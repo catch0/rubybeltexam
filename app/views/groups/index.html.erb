@@ -1,0 +1,31 @@
+<h1> Hello <%= @user.first_name %> <%= @user.last_name%> !!  </h1>
+
+<% @groups.each do |group| %> 
+<div id = "groups">    
+    <h3> <a href="/groups/<%=group.id%>"><%= group.name %></a></h3>
+<p> <%= group.description%></p>
+<p> Number of members <%= group.members.length %></p>
+    </div>
+    <% end %>
+
+
+<div id = "create">
+<form action = "/groups" method="post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">    
+<label> Org Name</label>
+<input type = "text" name ="group[name]">
+<label> Description </label>
+<textarea name="group[description]"></textarea>
+<input type = "submit" value="submit">
+</form> 
+<% if flash[:errors]%>
+<% flash[:errors].each do |error|%>
+    <p class = "errors" ><%= error %></p>
+<%end %>
+<% end %>
+
+</div>
+
+<div id = "nav"> 
+<a href="/sessions" data-method="delete" class="logout"> Logout</a>
+</div>

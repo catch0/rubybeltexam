@@ -1,0 +1,19 @@
+<h1> <%=@group.name%></h1>
+<p> <%= @group.description%> </p>
+
+
+<a href = "/members/<%=@group.id%>" method= "post"> Join Group</a>
+
+<a href = "/members/delete/<%=@group.id%>"> Leave group </a>
+
+<h4> Created By : <%= @group.user.first_name%> <%= @group.user.last_name%></h4>
+<div id = "members">
+<h4> Members :</h4>
+<% @members.each do |member| %>
+<p> <%= member.user.first_name %></p>
+    <% end %>
+</div>
+<div id = "nav"> 
+<a href="/sessions" data-method="delete" class="logout"> Logout</a>
+<a href="/groups">Back to Groups</a>
+</div>
