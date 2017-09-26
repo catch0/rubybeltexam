@@ -20,10 +20,14 @@
 .groupcard {
     top: 10px;
 }
-.nav{
-    background-color: cornflowerblue;
-    margin: 0;
+#nav {
+    background-color: #f4cd41;
+    border-bottom: 1px solid #f44141;
 }
-.row {
-    margin-top: 50px;
+#nav a {
+    float: right;
+}
+.nav-wrapper{
+    background-color: #f4cd41;
+    border-bottom: 1px solid #f44141;
 }

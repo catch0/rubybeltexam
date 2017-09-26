@@ -1,6 +1,37 @@
-<nav>
-<h1> <%=@group.name%></h1>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"> <%=@group.name%></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/sessions" data-method="delete" class="logout"> Logout</a></li>
+      </ul>
+    </div>
 </nav>
+
+<!--
+        <div class="col s6 m6 l6 groupcard">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title"><%= @group.name%></span>
+              <p> <%= @group.description%></p>
+              <p>Created By : <%= @group.user.first_name%> <%= @group.user.last_name%> </p>
+                <div id = "members">
+<h4> Members :</h4>
+<% @members.each do |member| %>
+<p> <%= member.user.first_name %> <%= member.user.last_name%></p>
+    <% end %>
+</div>
+            </div>
+            <div class="card-action">
+             <% if @members_in_ids.include? session[:user_id] %>
+<a href = "/members/delete/<%=@group.id%>"> Leave group </a>
+<%else%>
+<a href = "/members/<%=@group.id%>" method= "post"> Join Group</a>
+<% end %>  
+            </div>
+          </div>
+        </div>
+-->
+
 
 
 <p> <%= @group.description%> </p>
@@ -20,6 +51,7 @@
 <p> <%= member.user.first_name %> <%= member.user.last_name%></p>
     <% end %>
 </div>
+
 <div id = "nav"> 
 <a href="/sessions" data-method="delete" class="logout"> Logout</a>
 <a href="/groups">Back to Groups</a>

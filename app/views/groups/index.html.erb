@@ -1,6 +1,11 @@
-<nav class = "nav">
-<h1 id = "greeting"> Hello <%= @user.first_name %> <%= @user.last_name%>!!  </h1>
-</nav>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"> Hello <%= @user.first_name %> <%= @user.last_name%>!!</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/sessions" data-method="delete" class="logout"> Logout</a></li>
+      </ul>
+    </div>
+  </nav>
 
 <div class = "row"> 
 <% @groups.each do |group| %> 
@@ -43,6 +48,3 @@
 
 </div>
 
-<div id = "nav"> 
-<a href="/sessions" data-method="delete" class="logout"> Logout</a>
-</div>

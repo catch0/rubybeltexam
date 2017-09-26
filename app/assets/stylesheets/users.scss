@@ -3,43 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-//#register{
-//    display: block;
-//    width: 190px;
-//}
-//#login {
-//    display: block;
-//    width: 198px;
-//}
-//.errors{
-//    color: red;
-//    background-color: yellow;
-//}
-.navbar {
-    background-color: blue;
-    height: 100px;
-}
-.input-field{
-    margin-right: 4px;
-}
-.icon-prefix{
-    background-color:beige;
-    color: black;
-    text-decoration-color:black;
-}
-submit{
-    background: black;
-}
-
-.bitches{
-    color: black;
-//    text-decoration-color: black;
-     border-bottom: 4px solid white;
-}
-.bitch{
-    background-color:black;
-    width: 6rem;
-}
 .errors{
     color: red;
+}
+#nav {
+    background-color: #f4cd41;
+    border-bottom: 1px solid #f44141;
+}
+
+.bitch {
+    background-color: #f44141;
+}
+.col{
+    text-align: center;
 }
