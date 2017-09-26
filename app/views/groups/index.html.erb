@@ -1,14 +1,31 @@
-<h1> Hello <%= @user.first_name %> <%= @user.last_name%> !!  </h1>
+<nav class = "nav">
+<h1 id = "greeting"> Hello <%= @user.first_name %> <%= @user.last_name%>!!  </h1>
+</nav>
 
+<div class = "row"> 
 <% @groups.each do |group| %> 
-<div id = "groups">    
-    <h3> <a href="/groups/<%=group.id%>"><%= group.name %></a></h3>
-<p> <%= group.description%></p>
-<p> Number of members <%= group.members.length %></p>
-    </div>
-    <% end %>
-
-
+        <div class="col s6 m6 l6 groupcard">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title"><%= group.name%></span>
+              <p> <%= group.description%></p>
+                <% if group.members.length == 1 %>
+              <p> (<%= group.members.length %> Member)</p>
+                <% else%>
+            <p> (<%= group.members.length%> Members)</p>
+                <% end %>
+            </div>
+            <div class="card-action">
+              <a href="/groups/<%=group.id%>">View Group</a>
+            <% if group.user.id == session[:user_id] %>
+            <a href= "/groups/delete/<%=group.id%>" data-method="delete">Delete</a>
+            <% end %>            
+            </div>
+          </div>
+        </div>
+        <% end %>
+    
+</div>
 <div id = "create">
 <form action = "/groups" method="post">
 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">    

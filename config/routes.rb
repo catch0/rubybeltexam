@@ -5,6 +5,7 @@ Rails.application.routes.draw do
    get '/groups' => 'groups#index'
    get '/groups/:id' => 'groups#show'
    post '/groups' => 'groups#create'
+   delete '/groups/delete/:id' => 'groups#destroy'
    
    post '/members/:id' => 'members#create'
    get '/members/:id' => 'members#create'

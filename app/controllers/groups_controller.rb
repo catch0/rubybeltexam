@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
        user = current_user
         @group = Group.find(params[:id])
         @members = Member.all.includes(:group, :user)
-        #@members_in_ids = user.member_in
+        @members_in_ids = @group.members_in_ids
     end
     
     def create
@@ -22,6 +22,13 @@ class GroupsController < ApplicationController
         end
     end
     
+    def destroy
+        Group.destroy(params[:id])
+        redirect_to '/groups'
+    end
+        
+        
+        
     private
     def group_params
         params.require(:group).permit(:name, :description)

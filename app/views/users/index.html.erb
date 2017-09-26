@@ -1,35 +1,110 @@
-<div id = "register">
-<h1> Register</h1>
-<form action = "/users" method ="post">
-<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <label> Name </label>
-    <input type = "text" name = "user[first_name]">
-    <label> Last Name   </label>
-    <input type = "text" name= "user[last_name]">
-    <label> Email </label>
-    <input type = "text" name = "user[email]">
-    <label> Password </label>
-    <input type = "password" name="user[password]">
-    <label> Password Confirm </label>
-    <input type = "password" name = "user[password_confirm]">
-    <input type = "submit" value = "submit">
-</form>
-</div>
-<% if flash[:reg_errors]%>
-<%flash[:reg_errors].each do |error|%>
-<p class = "errors"> <%= error %>
-<% end %>
-    <% end %>
-    
-<div id = "login"> 
-   <h1> Login </h1>
-<form action = "sessions" method= "post">
- <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"> 
-<label> Email </label>    
-<input type = "text" name="login[email]">
-<label> password </label>
-<input type = "password" name = "login[password]">
-<input type = "submit" value = "login">
-</form>
-</div>
+<nav class= "navbar">
+  <div class="row">
+    <form class="col s12" action="sessions" method="post"> 
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class="row">
+            <div class="input-field col s2">
+                <input class="icon_prefix" type="text" class="validate"  name="login[email]">
+                <label class = "bitches">Email</label>
+            </div>
+            <div class = "col s1 m1 l1">
+            </div>
+            <div class="input-field col s2">
+                <input class="icon_prefix" type="password" class="validate"  name = "login[password]">
+                <label class = "bitches">Password</label>
+            </div>
+            <div class = "col s1 m1 l1">
+            </div>
+            <div class = "col s2">
+                <input type = "submit" value = "login" class="bitch">
+            </div>
+            <div class = "col s2">
+            </div>
+        </div>
+            <div class = "col s2">
+            </div>
+    </form>
+  </div>
+</nav>
 <p class = "errors"> <%= flash[:login_errors]%></p>
+
+  <div class="row">
+      <div class = "col s12 m12 l12">
+        <h1> Register </h1>
+      </div>
+        <form class="col s6" action = "/users" method ="post">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <div class="row">
+                    <div class="input-field col s3">
+                        <input placeholder="First Name" id="first_name" type="text" class="validate" name = "user[first_name]">
+                    </div>
+                    <div class="input-field col s3">
+                        <input placeholder="Last Name" id="last_name" type="text" class="validate" name = "user[last_name]">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="email" type="email" class="validate" placeholder="email" name = "user[email]">
+                    </div>
+                </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input id="password" type="password" class="validate" placeholder="password" name="user[password]">
+                </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+            <input id="password_confirm" type="password" class="validate" placeholder="Password Confirmation" name = "user[password_confirm]">
+        </div>
+      </div>
+      <div class="row">
+          <div class = "col s12 m12 l12">
+              <input type = "submit" value = "submit">
+          </div>
+      </div>
+    </form>
+      <div class = "row">
+      <div class = "s12 m12 l12">
+          
+      </div>
+      
+      </div>
+                  <% if flash[:reg_errors]%>
+            <%flash[:reg_errors].each do |error|%>
+            <p class = "errors"> <%= error %>
+            <% end %>
+            <% end %>
+  </div>
+
+
+
+
+
+<div class = "row">
+    <div class = "col s2"></div>
+        <div id = "register">
+            <h1> Register</h1>
+            <form action = "/users" method ="post">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <label> First Name </label>
+                <input type = "text" name = "user[first_name]">
+                <label> Last Name   </label>
+                <input type = "text" name= "user[last_name]">
+                <label> Email </label>
+                <input type = "text" name = "user[email]">
+                <label> Password </label>
+                <input type = "password" name="user[password]">
+                <label> Password Confirm </label>
+                <input type = "password" name = "user[password_confirm]">
+                <input type = "submit" value = "submit">
+            </form>
+</div>
+            <% if flash[:reg_errors]%>
+            <%flash[:reg_errors].each do |error|%>
+            <p class = "errors"> <%= error %>
+            <% end %>
+            <% end %>
+            </p>    
+    <div class = "col s2 m2 l2">
+    </div>
+</div>

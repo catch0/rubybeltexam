@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
         if user && user.authenticate(login_params[:password])
         session[:user_id] = user.id
             redirect_to '/groups'
-        else flash[:login_errors] = ["whoah did you forget to register/yourpassword"]
+        else flash[:login_errors] = "did you forget to register/yourpassword?"
             redirect_to '/'
         end
     end
