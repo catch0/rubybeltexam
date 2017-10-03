@@ -23,6 +23,7 @@
 #nav {
     background-color: #f4cd41;
     border-bottom: 1px solid #f44141;
+    text-align: center;
 }
 #nav a {
     float: right;
@@ -30,4 +31,32 @@
 .nav-wrapper{
     background-color: #f4cd41;
     border-bottom: 1px solid #f44141;
+    text-align: center;
+    font-size: 30px;
+}
+#create{
+    background-color: #f4cd41;
+}
+
+form h2{
+text-align: center;
+color: ivory;
+    }
+form {
+    align-content: center;
+}
+.card-title{
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.groupcard{
+    top: 50%;
+}
+
+.creator{
+    font-size: 20px;
+    margin-top: 4rem;
+    text-decoration-color: #f44141;
 }

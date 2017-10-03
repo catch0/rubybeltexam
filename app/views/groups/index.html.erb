@@ -1,6 +1,6 @@
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo"> Hello <%= @user.first_name %> <%= @user.last_name%>!!</a>
+        <a href="#"> Hello <%= @user.first_name %> <%= @user.last_name%>!! </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/sessions" data-method="delete" class="logout"> Logout</a></li>
       </ul>
@@ -31,8 +31,16 @@
         <% end %>
     
 </div>
+
+<div class = "row"> 
+<div class = "col s4 m4 l4">
+</div>
+<div class = "col s4 m4 l4"> 
+    
+
 <div id = "create">
 <form action = "/groups" method="post">
+<h2> Create Your Own Group</h2>
 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">    
 <label> Org Name</label>
 <input type = "text" name ="group[name]">
@@ -45,6 +53,7 @@
     <p class = "errors" ><%= error %></p>
 <%end %>
 <% end %>
-
+    </div>
 </div>
+ </div>
 
